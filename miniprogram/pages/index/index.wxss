@@ -1,0 +1,44 @@
+/* 安卓副本：采用明确尺寸和静态配色，避免弹层及复杂继承影响多端布局。 */
+.page{padding:28rpx 28rpx 180rpx;box-sizing:border-box;min-height:100vh;background:#f5f7f2;color:#000;font-size:30rpx;line-height:1.6}
+.brand{margin:16rpx 0 28rpx}.eyebrow{display:block;font-size:26rpx;margin-bottom:14rpx}.title{display:block;font-size:40rpx;font-weight:600}
+.card{background:#fff;border:1rpx solid #dfe6da;border-radius:24rpx;padding:28rpx;margin:0 0 24rpx;box-sizing:border-box}
+.heading{display:block;font-size:34rpx;font-weight:600;line-height:1.5;color:#000}
+.muted{display:block;font-size:28rpx;line-height:1.75;color:#000}
+.row{display:flex;align-items:center;justify-content:space-between}.section{margin:24rpx 4rpx}
+.primary,.secondary,.today-button{display:block;width:100%;box-sizing:border-box;font-size:30rpx;line-height:1.5;padding:22rpx 16rpx;border-radius:16rpx;margin:20rpx 0 0}
+.primary{background:#42684d;color:#fff}.secondary{background:#edf2e8;color:#000;border:1rpx solid #c7d4c0}
+.today-button{width:220rpx;min-width:0!important;margin:0 0 20rpx;background:#e9efdf;color:#000;font-weight:600}
+.calendar .row{width:100%}
+.week-arrow{flex-shrink:0;width:76rpx!important;min-width:0!important;max-width:76rpx;margin:0;padding:0;height:84rpx;line-height:80rpx;background:#edf2e8;color:#000;font-size:44rpx;border-radius:12rpx}
+.date-picker{flex:1;min-width:0;margin:0 12rpx;background:#edf2e8;border-radius:12rpx;text-align:center}
+.calendar-title{padding:16rpx 4rpx;font-size:28rpx;font-weight:600;line-height:1.7}.sub{margin-left:10rpx;font-size:25rpx}
+.week{display:flex;margin-top:24rpx}.day{flex:1;min-width:0;text-align:center;border:3rpx solid transparent;border-radius:16rpx;padding:14rpx 0;margin:0 2rpx;box-sizing:border-box}
+.day-label{display:block;font-size:26rpx;line-height:1.6}.day-number{display:block;font-size:34rpx;font-weight:600;line-height:1.6}
+.day.today{border-color:#54805a}.day.active{background:#42684d}.day.active .day-label,.day.active .day-number{color:#fff}
+.empty{text-align:center;padding-top:40rpx;padding-bottom:40rpx}.empty .muted{margin-top:16rpx}
+.course{display:flex;align-items:flex-start;border-left-width:10rpx}
+.course-time{width:102rpx;flex-shrink:0;font-size:34rpx;line-height:1.5;margin-right:22rpx}.course-time .muted{margin-top:12rpx}
+.course-body{flex:1;min-width:0}.course-body .heading{font-size:32rpx;word-break:break-all}.course-body .muted{margin-top:10rpx}
+.summary,.notice{background:#e9efdf;border-radius:24rpx;padding:28rpx;margin-bottom:24rpx}.summary .muted,.notice .muted{margin-top:12rpx}
+.demo-import{margin-top:32rpx;text-align:center}
+.profile{text-align:center}.profile .heading,.profile .muted{margin-top:18rpx}
+.avatar-picker{padding:0;margin:0 auto;width:128rpx!important;min-width:0!important;height:128rpx;border-radius:28rpx;background:#e9efdf;overflow:hidden}
+.avatar-image,.avatar-placeholder{width:128rpx;height:128rpx}.avatar-letter{display:block;line-height:128rpx;font-size:52rpx;font-weight:600}
+.refresh-help .muted{margin-top:14rpx}
+.theme-options{display:flex;margin:20rpx -4rpx 0}.theme-option{flex:1;min-width:0!important;margin:0 4rpx;padding:20rpx 4rpx;font-size:26rpx;line-height:1.5;background:#edf2e8;color:#000;border:2rpx solid transparent;border-radius:12rpx}
+.theme-option.chosen{border-color:#42684d}
+.bottom-nav{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1rpx solid #dfe6da;padding:18rpx 28rpx 28rpx;z-index:10}
+.nav-row{display:flex}.nav-item{flex:1;min-width:0!important;margin:0 8rpx;padding:16rpx;font-size:30rpx;line-height:1.5;background:#fff;color:#000;border-radius:14rpx}.nav-active{background:#e9efdf;font-weight:600}
+.avatar-canvas{position:fixed;left:-10000px;top:0;width:512px;height:512px;pointer-events:none}
+.error{display:block;text-align:left;margin-top:20rpx;padding:20rpx;background:#fff0e7;color:#000;font-size:28rpx;line-height:1.7;border-radius:12rpx}
+.theme-ocean{background:#f2f6f8}.theme-ocean .primary,.theme-ocean .day.active{background:#356580}.theme-ocean .summary,.theme-ocean .notice,.theme-ocean .today-button,.theme-ocean .nav-active{background:#e5eff5}.theme-ocean .secondary,.theme-ocean .week-arrow,.theme-ocean .date-picker,.theme-ocean .theme-option{background:#eff4f7}.theme-ocean .theme-option.chosen{border-color:#356580}
+.theme-amber{background:#faf6ef}.theme-amber .primary,.theme-amber .day.active{background:#986033}.theme-amber .summary,.theme-amber .notice,.theme-amber .today-button,.theme-amber .nav-active{background:#f4e9d9}.theme-amber .secondary,.theme-amber .week-arrow,.theme-amber .date-picker,.theme-amber .theme-option{background:#f8f2e9}.theme-amber .theme-option.chosen{border-color:#986033}
+.button-hover{opacity:.8;transform:scale(.96)}
+button{transition:transform 140ms ease-out,opacity 140ms ease-out,background-color 180ms ease-out}
+.day{transition:background-color 180ms ease-out,border-color 180ms ease-out}
+.pane-content{animation:pane-enter 260ms cubic-bezier(.22,.68,0,1)}
+@keyframes pane-enter{from{opacity:.35;transform:translateY(18rpx)}to{opacity:1;transform:translateY(0)}}
+.course-motion-0{animation:course-enter-a 260ms cubic-bezier(.22,.68,0,1)}.course-motion-1{animation:course-enter-b 260ms cubic-bezier(.22,.68,0,1)}
+@keyframes course-enter-a{from{opacity:.3;transform:translateY(14rpx)}to{opacity:1;transform:translateY(0)}}@keyframes course-enter-b{from{opacity:.3;transform:translateY(14rpx)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:350px){.page{padding-left:20rpx;padding-right:20rpx}.card{padding:22rpx}.calendar-title{font-size:25rpx}.sub{display:block;margin-left:0}.course-time{width:94rpx;margin-right:16rpx}.theme-option{font-size:25rpx}}
+@media(prefers-reduced-motion:reduce){.course-region,.pane-content{animation:none}button{transition:none}.button-hover{transform:none}}

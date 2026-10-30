@@ -1,0 +1,36 @@
+<view class="page theme-{{theme}}">
+  <view class="brand"><text class="eyebrow">北京信息科技大学</text><text class="title">咕嘎课程表</text></view>
+  <view wx:if="{{pane === 'schedule'}}" class="pane-content">
+    <view wx:if="{{demoMode}}" class="notice"><text class="heading">离线演示课表</text><text class="muted">2026-10-05读取的本地快照，非实时同步</text><button class="secondary" bindtap="exitDemo">退出演示，返回个人课表</button></view>
+    <button class="today-button" bindtap="returnToday">回到今日</button>
+    <view class="card calendar">
+      <view class="row"><button class="week-arrow" size="mini" bindtap="shiftWeek" data-delta="-7" aria-label="上一周">‹</button><picker class="date-picker" mode="date" value="{{date}}" bindchange="changeDate"><view class="calendar-title">{{date}}<text class="sub">{{connected ? '第' + week + '周' : '本周安排'}} ▾</text></view></picker><button class="week-arrow" size="mini" bindtap="shiftWeek" data-delta="7" aria-label="下一周">›</button></view>
+      <view class="week"><view wx:for="{{days}}" wx:key="date" class="day {{item.selected ? 'active' : ''}} {{item.today ? 'today' : ''}}" bindtap="pickDay" data-date="{{item.date}}"><text class="day-label">{{item.label}}</text><text class="day-number">{{item.number}}</text></view></view>
+    </view>
+    <view wx:if="{{!connected}}" class="card empty"><text class="heading">连接学校课表</text><button class="primary" bindtap="openLogin">连接我的课表</button></view>
+    <view wx:else class="course-region course-motion-{{courseMotion}}">
+      <view class="row section"><text class="heading">当天课程</text><text class="muted">{{count}} 次上课</text></view>
+      <view wx:for="{{courses}}" wx:key="id" class="card course" style="border-left-color:{{item.color}}">
+        <view class="course-time"><text>{{item.start}}</text><text class="muted">{{item.end}}</text></view>
+        <view class="course-body"><text class="heading">{{item.name}}</text><text class="muted">{{item.room || '教室待定'}}</text><text class="muted">第 {{item.startSection}}—{{item.endSection}} 节</text></view>
+      </view>
+      <view wx:if="{{!count}}" class="card empty"><text class="heading">当天没有排课</text></view>
+    </view>
+    <view class="summary"><text class="heading">{{tomorrow}}</text><text class="muted">临时调课请以学校通知为准。</text></view>
+  </view>
+  <view wx:if="{{pane === 'profile'}}" class="pane-content">
+    <view class="card profile">
+      <button class="avatar-picker" bindtap="chooseAvatar" disabled="{{avatarBusy}}" aria-label="选择头像图片"><image wx:if="{{avatarPath}}" class="avatar-image" src="{{avatarPath}}" mode="aspectFill" binderror="avatarLoadError"/><view wx:else class="avatar-placeholder"><text class="avatar-letter">咕</text></view></button>
+      <text class="muted">{{avatarBusy ? '正在保存…' : '点击更换头像'}}</text>
+      <text class="heading">{{connected ? owner : '尚未连接课表'}}</text><text class="muted">{{demoMode ? '离线演示数据' : term}}</text>
+      <button class="primary" bindtap="openLogin">{{connected ? '连接 / 切换账号' : '连接学校账号'}}</button>
+      <text wx:if="{{connected && !demoMode}}" class="muted">课表有变动时，重新登录即可刷新。</text>
+      <button wx:if="{{connected}}" class="secondary" bindtap="logout">{{demoMode ? '退出演示' : '退出并清除本机课表'}}</button>
+      <text wx:if="{{avatarError}}" class="error">{{avatarError}}</text>
+    </view>
+    <view class="card"><text class="heading">课程提醒（测试版）</text><button class="secondary" bindtap="openNotifications">设置课程提醒 ›</button><text wx:if="{{reminderMessage}}" class="error">{{reminderMessage}}</text></view>
+    <view class="card theme-card"><text class="heading">主题配色</text><view class="theme-options"><button wx:for="{{themes}}" wx:key="id" class="theme-option {{theme === item.id ? 'chosen' : ''}}" data-theme="{{item.id}}" bindtap="changeTheme"><text>{{item.name}}</text><text>{{theme === item.id ? ' ✓' : ''}}</text></button></view></view>
+  </view>
+  <view class="bottom-nav"><view class="nav-row"><button wx:for="{{tabs}}" wx:key="id" class="nav-item {{pane === item.id ? 'nav-active' : ''}}" data-pane="{{item.id}}" bindtap="switchPane">{{item.name}}</button></view></view>
+</view>
+<canvas type="2d" id="avatarCanvas" class="avatar-canvas"></canvas>

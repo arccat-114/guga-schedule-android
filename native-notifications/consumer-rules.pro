@@ -1,0 +1,2 @@
+-keep class com.donut.wx0000000000000000.** { *; }
+-keepattributes RuntimeVisibleAnnotations,RuntimeInvisibleAnnotations

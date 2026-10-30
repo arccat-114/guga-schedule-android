@@ -1,0 +1,9 @@
+{
+  "name": "guga-android",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node tests/android-client.js && node tests/android-page.js && node tests/android-notification-plan.js && node tests/android-notification-bridge.js && node tests/android-test-channel.js && node tests/avatar.js && node tests/summer-term.js"
+  }
+}

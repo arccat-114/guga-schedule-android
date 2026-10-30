@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.donut.plugin</groupId>
+  <artifactId>wx0000000000000000</artifactId>
+  <version>0.1.1</version>
+  <packaging>aar</packaging>
+  <name>Guga local notifications and school HTTPS</name>
+</project>

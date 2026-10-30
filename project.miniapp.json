@@ -1,0 +1,62 @@
+{
+  "miniVersion": "v2",
+  "name": "咕嘎课程表",
+  "version": "0.0.1",
+  "versionCode": 104,
+  "i18nFilePath": "i18n",
+  "mini-plugin": {
+    "android": [
+      {
+        "open": true,
+        "pluginId": "wx0000000000000000",
+        "pluginVersion": "0.1.1"
+      }
+    ]
+  },
+  "mini-ohos": {
+    "sdkVersion": "0.5.1"
+  },
+  "mini-android": {
+    "resourcePath": "miniapp/android/nativeResources",
+    "sdkVersion": "1.7.0",
+    "toolkitVersion": "0.11.0",
+    "useExtendedSdk": {
+      "media": false,
+      "bluetooth": false,
+      "network": false,
+      "scanner": false,
+      "xweb": false
+    },
+    "icons": {},
+    "splashscreen": {
+      "hdpi": "",
+      "xhdpi": "",
+      "xxhdpi": ""
+    },
+    "enableVConsole": "close",
+    "privacy": {
+      "enable": true
+    }
+  },
+  "mini-ios": {
+    "sdkVersion": "1.7.0",
+    "toolkitVersion": "0.0.9",
+    "useExtendedSdk": {
+      "WeAppOpenFuns": true,
+      "WeAppNetwork": false,
+      "WeAppBluetooth": false,
+      "WeAppMedia": false,
+      "WeAppLBS": false,
+      "WeAppOthers": false
+    },
+    "enableVConsole": "close",
+    "icons": {},
+    "splashScreen": {
+      "customImage": ""
+    },
+    "privacy": {
+      "enable": false
+    },
+    "enableOpenUrlNavigate": true
+  }
+}

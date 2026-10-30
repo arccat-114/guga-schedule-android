@@ -1,0 +1,15 @@
+<view class="login-page">
+  <text class="login-title">连接学校课表</text>
+  <text class="login-note">使用北京信息科技大学本人统一认证账号</text>
+  <view class="login-card">
+    <text class="label">学号</text>
+    <input class="field" placeholder="请输入学号" value="{{username}}" data-key="username" bindinput="input" disabled="{{busy}}"/>
+    <text class="label">学校密码</text>
+    <input class="field" placeholder="请输入学校密码" value="{{password}}" password data-key="password" bindinput="input" disabled="{{busy}}"/>
+    <text class="label">导入学期</text>
+    <picker range="{{termLabels}}" value="{{termIndex}}" bindchange="pickTerm" disabled="{{busy}}"><view class="field">{{termLabels[termIndex]}}　▾</view></picker>
+    <text wx:if="{{error}}" class="login-error">{{error}}</text>
+    <button class="login-button" bindtap="login" loading="{{busy}}" disabled="{{busy}}">{{busy ? '正在连接学校…' : '登录并导入'}}</button>
+  </view>
+  <text class="login-note">密码仅用于本次登录，不保存。</text>
+</view>

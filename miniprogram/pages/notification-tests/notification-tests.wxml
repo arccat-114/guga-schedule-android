@@ -1,0 +1,9 @@
+<view class="settings theme-{{theme}}"><view class="card">
+  <text class="heading">通知测试通道</text>
+  <text class="hint">普通通知立即发送；课程汇总和课前模拟测试使用个人课表的真实内容，走安卓闹钟，约2秒后发送。系统休眠或省电策略可能造成延迟。</text>
+  <button class="secondary" data-kind="generic" bindtap="test" disabled="{{busy}}">立即发送测试通知</button>
+  <button class="secondary" data-kind="summary" bindtap="test" disabled="{{busy}}">模拟次日课程汇总</button>
+  <button class="secondary" data-kind="course" bindtap="test" disabled="{{busy}}">模拟上课前提醒</button>
+  <text class="hint">课前模拟取下一次课程。不改变提醒开关或日常时间，不覆盖正式计划。先测普通通知，再测两个定时通道。</text>
+  <text wx:if="{{message}}" class="message {{error?'error':''}}">{{message}}</text>
+</view></view>

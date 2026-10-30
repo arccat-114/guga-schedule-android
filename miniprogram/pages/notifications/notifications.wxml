@@ -1,0 +1,16 @@
+<view class="settings theme-{{theme}}">
+  <view class="card">
+    <text class="heading">课程提醒</text>
+    <view class="row"><text class="label">次日课表汇总<text class="beta-label">（测试版，不稳定）</text></text><switch checked="{{summaryEnabled}}" data-key="summaryEnabled" bindchange="toggle" disabled="{{busy}}" color="#42684d"/></view>
+    <picker mode="time" value="{{summaryTime}}" bindchange="time" disabled="{{busy}}"><view class="time-choice">每天 {{summaryTime}}　选择时间 ›</view></picker>
+    <view class="row"><text class="label">上课前提醒<text class="beta-label">（测试版，不稳定）</text></text><switch checked="{{courseEnabled}}" data-key="courseEnabled" bindchange="toggle" disabled="{{busy}}" color="#42684d"/></view>
+    <view class="minutes-row"><text>提前</text><input type="number" value="{{leadMinutes}}" bindinput="minutes" maxlength="4" disabled="{{busy}}" aria-label="提前提醒分钟数"/><text>分钟</text></view>
+    <text class="hint">0—1440 分钟；0 表示上课时。时间按北京时间。</text>
+    <button class="primary" data-action="save" bindtap="action" loading="{{busy}}" disabled="{{busy}}">保存提醒设置</button>
+    <text wx:if="{{message}}" class="message {{error ? 'error' : ''}}">{{message}}</text>
+  </view>
+  <view class="card"><text class="heading">通知状态</text><text class="hint">{{status}}</text>
+    <button class="secondary" data-action="requestPermissions" bindtap="action" disabled="{{busy}}">开启系统权限</button>
+    <button class="test-link" bindtap="openTests" disabled="{{busy}}" aria-label="打开通知测试通道">测试通道 ›</button>
+  </view>
+</view>
